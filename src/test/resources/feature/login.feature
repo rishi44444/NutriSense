@@ -7,14 +7,14 @@ Feature: login feature
     Then change the admin settings to "Staging"
     And the user click on the "Log In" button text
 
-  @valid_login
+  @login_erroe_message
   Scenario: Verify error message displays when user eneters wrong email & password
     And the user enters a valid email "abc@email.com" and password "Abvde12345"
     Then the "Sign In" button by desc should be "enabled"
     And the user click on the "Sign In" button desc
     Then the user should see an error message saying "Incorrect email/password!"
 
-  @invalid_login
+  @login_button_disabled1
   Scenario Outline: Verify login button is disabled when all fields are not entered
     And the user enters a valid email "<Email>" and password "<Password>"
     Then the "Log In" button by text should be "<Status>"
@@ -24,7 +24,7 @@ Feature: login feature
       |               | Abcde12345 | disabled | 
       | abc@email.com |            | disabled | 
       
-  @invalid_login
+  @login_button_disabled2
   Scenario Outline: Verify login button is disabled when all fields are not entered
     And the user enters a valid email "<Email>" and password "<Password>"
     Then the "Sign In" button by desc should be "enabled"

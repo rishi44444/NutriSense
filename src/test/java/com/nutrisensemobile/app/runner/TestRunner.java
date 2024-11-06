@@ -9,10 +9,10 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/feature",
         glue = {"com.nutrisensemobile.app.steps"},
-        plugin = {"pretty", "html:target/cucumber-reports.html"},
-        tags = "@rishi"
+        plugin = {"pretty", "html:target/cucumber-reports.html"}
+//       tags = ""
         
-     //   dryRun = true
+       // dryRun = true
 )
 
 public class TestRunner {

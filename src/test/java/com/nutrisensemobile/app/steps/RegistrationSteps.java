@@ -43,17 +43,6 @@ public class RegistrationSteps {
 		registrationPage.enterPassword(password);
 	}
 
-	@Then("the user see the {string} button is disabled")
-	public void the_user_see_the_button_is_disabled(String string) {
-	   registrationPage.verifyButtonIsDisabled(string, "disabled");
-	}
-/*	
-	@Then("the user should naviagate to {string} screen")
-	public void the_user_should_naviagate_to_screen(String string) {
-		registrationPage.verifyScreen(string);//
-	}
-*/
-
 	@Then("the user should naviagate to Select CGM screen")
 	public void the_user_should_naviagate_to_select_cgm_screen() {
 		registrationPage.verifyScreen();
@@ -73,9 +62,12 @@ public class RegistrationSteps {
 	public void the_password_strength_should_show_as(String string) {
 		registrationPage.verifyPasswordStrength(string);
 	}
+	
 
-
-
+	@When("the user scroll the screen to the bottom")
+	public void the_user_scroll_the_screen_to_the_bottom() {
+		registrationPage.scrollDown();
+	}
 
 }
 
